@@ -1,0 +1,14 @@
+{% extends 'myproject/base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Добро пожаловать на наш сайт!</h1>
+    <br>
+    <p class="lead">Мы предоставляем качественные услуги и стремимся к удовлетворению потребностей наших
+        клиентов. Узнайте больше о нас и наших предложениях!</p>
+    <br>
+    <a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Узнать больше</a>
+</div>
+{% endblock %}
