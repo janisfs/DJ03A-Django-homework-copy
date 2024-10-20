@@ -1,9 +1,25 @@
 {% extends 'myproject/base.html' %}
 
 {% block title %}
-    <Title>Новости</Title>
+   Новости
 {% endblock %}
+
 {% block content %}
-<h2>Новости</h2>
-<p>Здесь будут публиковаться последние новости и посты.</p>
+    <h1 style="margin: 20px;">Новости</h1>
+{% for new in news %}
+    <div class="news-item">
+        <h4>{{ new.title }}</h4>
+        <br>
+        <p><strong>Новость:</strong> {{ new.text }} </p>
+        <p><strong>Краткое описание:</strong> {{ new.short_description }} </p>
+        <p> {{ new.content }} </p>
+        <p><strong>Дата публикации:</strong> {{ new.pub_date|date:"d M Y H:i" }} </p>
+        <p><strong>Автор:</strong> {{ new.author.username }} </p>
+
+    </div>
+    <hr>
+{% empty %}
+    <p>Пока нет новостей.</p>
+{% endfor %}
+
 {% endblock %}
